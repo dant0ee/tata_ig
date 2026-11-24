@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SECRET MISSION: FIND TATA</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- FIRST SCREEN -->
+
+    <main class="mission-screen" id="missionScreen">
+      <img
+        src="mission-screen.png"
+        alt="Secret Mission: Find Tata"
+        class="mission-image"
+      />
+
+      <div class="mission-buttons">
+        <button id="startBtn">ACCEPT MISSION ❤️</button>
+        <button id="declineBtn">NO, I'M NOT INTERESTED 🙄</button>
+      </div>
+
+      <p class="footer">Choose wisely, agent. 🤫</p>
+    </main>
+
+    <!-- SECOND SCREEN -->
+
+    <section class="next-screen hidden" id="nextScreen">
+      <div class="character">💌</div>
+
+      <p class="classified">MISSION ACCEPTED</p>
+
+      <h1>TATA, ONE LITTLE QUESTION...</h1>
+
+      <p>Do you have a moment for me? 👀</p>
+
+      <div class="question-buttons">
+        <button id="yesBtn">YES ❤️</button>
+        <button id="noBtn">NO 🙄</button>
+      </div>
+    </section>
+
+    <!-- THIRD SCREEN - THE FINAL DEAL -->
+
+    <section class="final-screen hidden" id="finalScreen">
+      <p class="classified">FINAL MISSION · TOP SECRET</p>
+
+      <h1>THE FINAL DEAL</h1>
+
+      <p class="final-subtitle">სამივე ბეჭედი შენია აირჩე ნებისმიერი.</p>
+
+      <div class="ring-instruction">CHOOSE YOUR REWARD 💍</div>
+
+      <!-- RING SELECTION -->
+
+      <div class="ring-options">
+        <button class="ring-card" data-ring="Royal">
+          <div class="ring-art ring-royal">
+            <div class="ring-band"></div>
+            <div class="ring-gem"></div>
+          </div>
+
+          <h3>THE ROYAL</h3>
+          <p>Classic luxury.</p>
+        </button>
+
+        <button class="ring-card" data-ring="Diamond">
+          <div class="ring-art ring-diamond">
+            <div class="ring-band"></div>
+            <div class="ring-gem"></div>
+          </div>
+
+          <h3>THE DIAMOND</h3>
+          <p>Pure elegance.</p>
+        </button>
+
+        <button class="ring-card" data-ring="Gold">
+          <div class="ring-art ring-gold">
+            <div class="ring-band"></div>
+            <div class="ring-gem"></div>
+          </div>
+
+          <h3>THE GOLD</h3>
+          <p>Rich energy.</p>
+        </button>
+      </div>
+
+      <!-- SELECTED RING / INSTAGRAM OFFER -->
+
+      <div class="deal-panel hidden" id="dealPanel">
+        <div class="selected-ring">
+          <div class="ring-art ring-selected" id="selectedRing">
+            <div class="ring-band"></div>
+            <div class="ring-gem"></div>
+          </div>
+        </div>
+
+        <p class="deal-label">REWARD SELECTED</p>
+
+        <h2>მშვენიერი არჩევანია თათა. 😎</h2>
+
+        <p class="deal-description">ბეჭედი მზადაა მხოლოდ ერთი პირობით</p>
+
+        <div class="deal-divider"></div>
+
+        <h2 class="instagram-title">თქვენი ინსტაგრამი მადმუაზელ?</h2>
+
+        <p class="instagram-description">ბეჭედი ინსტაგრამის სანაცლოდ 😂</p>
+
+        <form id="instagramForm">
+          <label for="instagramInput">YOUR INSTAGRAM USERNAME</label>
+
+          <div class="instagram-input">
+            <span>@</span>
+            <input
+              type="text"
+              id="instagramInput"
+              placeholder="your_username"
+              autocomplete="off"
+              maxlength="30"
+              required
+            />
+          </div>
+
+          <button type="submit" id="claimBtn">CLAIM YOUR RING 💍</button>
+        </form>
+
+        <p class="small-note">No refunds. No exchanges. 😂</p>
+      </div>
+
+      <!-- SUCCESS SCREEN -->
+
+      <div class="success-panel hidden" id="successPanel">
+        <div class="success-icon">💍</div>
+        <div class="kiss-animation">💋 😘 💋</div>
+
+        <h2>THANK YOU, TATA!</h2>
+
+        <p class="success-description">You just made someone's day! ❤️</p>
+
+        <p class="deal-label">DEAL COMPLETED</p>
+
+        <h2>CONGRATULATIONS!</h2>
+
+        <p class="success-description">Your ring has been reserved.</p>
+
+        <div class="username-display" id="usernameDisplay"></div>
+
+        <p class="success-description">The mission was a success. 😎</p>
+
+        <div class="success-stamp">OFFICIALLY APPROVED ✓</div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

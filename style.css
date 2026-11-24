@@ -1,0 +1,729 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at 10% 10%, #ffb6d2, transparent 35%),
+    radial-gradient(circle at 90% 90%, #ff8fbd, transparent 35%), #fce5ed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Trebuchet MS", sans-serif;
+  color: #171017;
+
+  padding: 25px 0;
+}
+
+/* FIRST SCREEN */
+
+.mission-screen {
+  width: 92%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.mission-image {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border: 3px solid #171017;
+  border-radius: 18px;
+
+  box-shadow: 7px 8px 0 #171017;
+}
+
+/* BUTTONS */
+
+button {
+  border: 2px solid #171017;
+  border-radius: 14px;
+
+  padding: 16px 24px;
+
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 #171017;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.mission-buttons {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 65px;
+}
+
+#startBtn {
+  background: #f52283;
+  color: white;
+}
+
+#startBtn:hover {
+  background: #ff70aa;
+  transform: translateY(-3px);
+}
+
+#declineBtn {
+  background: #29232d;
+  color: white;
+
+  transform: scale(1);
+  transform-origin: center;
+
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.footer {
+  font-size: 12px;
+  color: #9b5271;
+  text-align: center;
+}
+
+/* SECOND SCREEN */
+
+.next-screen,
+.taste {
+  width: 90%;
+  max-width: 500px;
+
+  text-align: center;
+
+  background: #fff9fb;
+
+  padding: 40px 25px;
+
+  border: 2px solid #171017;
+  border-radius: 22px;
+
+  box-shadow: 8px 9px 0 #171017;
+}
+
+.character {
+  font-size: 65px;
+  margin-bottom: 15px;
+}
+
+.classified {
+  display: inline-block;
+
+  background: #171017;
+  color: #ff8fbd;
+
+  padding: 7px 12px;
+  border-radius: 5px;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #171017;
+  margin-bottom: 20px;
+}
+
+.next-screen > p:not(.classified) {
+  margin-bottom: 25px;
+}
+
+.question-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  min-height: 55px;
+}
+
+#yesBtn {
+  background: #f52283;
+  color: white;
+}
+
+#noBtn {
+  background: #29232d;
+  color: white;
+
+  position: relative;
+
+  transition:
+    left 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  touch-action: none;
+  will-change: left, top;
+}
+
+/* SCREEN TRANSITIONS */
+
+.hidden {
+  display: none !important;
+}
+
+.screen-enter {
+  animation: screenEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes screenEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==================================
+   THIRD SCREEN - THE FINAL DEAL
+================================== */
+
+.final-screen {
+  width: 92%;
+  max-width: 720px;
+
+  padding: 38px 30px;
+
+  text-align: center;
+
+  background: radial-gradient(circle at top, #493b4d, transparent 55%), #17131d;
+
+  color: white;
+
+  border: 2px solid #b99b62;
+  border-radius: 24px;
+
+  box-shadow:
+    0 0 25px #b99b6230,
+    8px 9px 0 #171017;
+}
+
+.final-screen .classified {
+  background: #b99b62;
+  color: #17131d;
+}
+
+.final-screen h1 {
+  color: #e6c98f;
+  font-size: 35px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.final-subtitle {
+  color: #c6bdca;
+  font-size: 14px;
+}
+
+.ring-instruction {
+  margin: 35px 0 22px;
+
+  color: #d9bc80;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* RING CARDS */
+
+.ring-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.ring-card {
+  background: #25202c;
+  border: 1px solid #63516a;
+
+  border-radius: 16px;
+  box-shadow: none;
+
+  padding: 20px 8px;
+
+  color: white;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.ring-card:hover {
+  transform: translateY(-8px);
+  border-color: #d9bc80;
+  background: #342a39;
+}
+
+.ring-card.selected {
+  border: 2px solid #d9bc80;
+  background: #403346;
+  transform: translateY(-6px);
+}
+
+.ring-card h3 {
+  color: #e6c98f;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.ring-card p {
+  color: #aaa0b0;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+/* CSS RING DESIGN */
+
+.ring-art {
+  width: 105px;
+  height: 105px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+}
+
+.ring-band {
+  width: 65px;
+  height: 65px;
+
+  border: 9px solid #d5ad62;
+  border-radius: 50%;
+
+  transform: rotate(-25deg);
+
+  box-shadow:
+    inset 0 0 5px #fff5c7,
+    0 0 10px #d5ad6240;
+}
+
+.ring-gem {
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+
+  top: 10px;
+  left: 42px;
+
+  transform: rotate(45deg);
+
+  background: linear-gradient(135deg, #ffffff, #b7eaff, #ffffff, #8eb5db);
+
+  border: 2px solid #f4e9ca;
+
+  box-shadow: 0 0 15px #b9e8ff;
+}
+
+/* DIFFERENT RING STYLES */
+
+.ring-royal .ring-band {
+  border-color: #e5bb6b;
+  width: 62px;
+  height: 62px;
+  border-width: 9px;
+}
+
+.ring-royal .ring-gem {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #fff, #d8b2ff, #fff);
+}
+
+.ring-diamond .ring-band {
+  border-color: #dce2e9;
+  width: 67px;
+  height: 67px;
+}
+
+.ring-diamond .ring-gem {
+  width: 27px;
+  height: 27px;
+  background: linear-gradient(135deg, white, #8ee9ff, white);
+  box-shadow: 0 0 20px #a9eaff;
+}
+
+.ring-gold .ring-band {
+  border-color: #f0a92d;
+  width: 70px;
+  height: 70px;
+  border-width: 11px;
+}
+
+.ring-gold .ring-gem {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #fff4a8, #ffbd35, white);
+  box-shadow: 0 0 18px #ffc247;
+}
+
+/* RING SELECTION ANIMATION */
+
+.ring-card.selected .ring-art {
+  animation: ringSelect 0.7s ease;
+}
+
+@keyframes ringSelect {
+  0% {
+    transform: scale(0.8) rotate(-15deg);
+  }
+
+  60% {
+    transform: scale(1.2) rotate(8deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* DEAL PANEL */
+
+.deal-panel {
+  margin-top: 35px;
+  padding: 25px 20px;
+
+  border-top: 1px solid #756044;
+
+  background: #211c28;
+  border-radius: 18px;
+
+  animation: screenEnter 0.65s ease;
+}
+
+.selected-ring {
+  margin-bottom: 15px;
+}
+
+.ring-selected {
+  transform: scale(1.3);
+  margin: 15px auto 20px;
+}
+
+.deal-label {
+  color: #d9bc80;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.deal-panel h2,
+.success-panel h2 {
+  font-size: 23px;
+  color: #f2d69d;
+  margin-bottom: 12px;
+}
+
+.deal-description,
+.instagram-description {
+  color: #bdb3c3;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.deal-divider {
+  height: 1px;
+  background: #63516a;
+  margin: 25px 0;
+}
+
+.instagram-title {
+  color: #e6c98f;
+}
+
+#instagramForm {
+  margin-top: 25px;
+  text-align: left;
+}
+
+#instagramForm label {
+  display: block;
+  color: #d9bc80;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 10px;
+}
+
+.instagram-input {
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  background: #15111a;
+  border: 1px solid #756044;
+  border-radius: 10px;
+
+  color: #d9bc80;
+
+  transition: border-color 0.3s ease;
+}
+
+.instagram-input:focus-within {
+  border-color: #e6c98f;
+}
+
+.instagram-input span {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.instagram-input input {
+  width: 100%;
+
+  padding: 15px 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: white;
+
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.instagram-input input::placeholder {
+  color: #746b7a;
+}
+
+#claimBtn {
+  width: 100%;
+  margin-top: 17px;
+
+  color: #17131d;
+  background: linear-gradient(135deg, #f3d99e, #c19b58);
+
+  border: 1px solid #f3d99e;
+  box-shadow: 0 5px 0 #816538;
+
+  transition: transform 0.3s ease;
+}
+
+#claimBtn:hover {
+  transform: translateY(-3px);
+}
+
+.small-note {
+  color: #887d90;
+  font-size: 10px;
+  margin-top: 18px;
+}
+
+/* SUCCESS PANEL */
+
+.success-panel {
+  margin-top: 25px;
+  padding: 35px 20px;
+
+  border-top: 1px solid #756044;
+  background: #211c28;
+  border-radius: 18px;
+
+  animation: screenEnter 0.8s ease;
+}
+
+.success-icon {
+  font-size: 75px;
+  margin-bottom: 20px;
+
+  animation: successRing 1s ease infinite alternate;
+}
+
+@keyframes successRing {
+  from {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  to {
+    transform: translateY(-10px) rotate(8deg);
+  }
+}
+
+.success-description {
+  color: #bdb3c3;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+.username-display {
+  margin: 20px 0;
+  padding: 15px;
+
+  border: 1px solid #d9bc80;
+  border-radius: 10px;
+
+  color: #f2d69d;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.success-stamp {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 10px 15px;
+
+  border: 1px solid #d9bc80;
+  color: #d9bc80;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  transform: rotate(-3deg);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .mission-screen {
+    width: 94%;
+  }
+
+  .mission-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .mission-buttons button {
+    width: 90%;
+  }
+
+  .next-screen {
+    padding: 30px 18px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .final-screen {
+    width: 94%;
+    padding: 30px 15px;
+  }
+
+  .final-screen h1 {
+    font-size: 27px;
+  }
+
+  .ring-options {
+    gap: 7px;
+  }
+
+  .ring-card {
+    padding: 15px 3px;
+  }
+
+  .ring-art {
+    transform: scale(0.85);
+  }
+
+  .ring-card h3 {
+    font-size: 9px;
+  }
+
+  .ring-card p {
+    font-size: 9px;
+  }
+
+  .deal-panel {
+    padding: 22px 13px;
+  }
+
+  .deal-panel h2,
+  .success-panel h2 {
+    font-size: 20px;
+  }
+}
+.email-notice {
+  color: #bdb3c3;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+#claimBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.kiss-animation {
+  font-size: 42px;
+  margin: 15px 0;
+  animation: kissEffect 1s ease-in-out infinite alternate;
+}
+
+@keyframes kissEffect {
+  from {
+    transform: scale(0.8) rotate(-8deg);
+  }
+
+  to {
+    transform: scale(1.2) rotate(8deg);
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  font-size: 20px;
+  pointer-events: none;
+  animation: confettiFall 3s ease-in forwards;
+  z-index: 10;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.success-panel {
+  position: relative;
+  overflow: hidden;
+}
